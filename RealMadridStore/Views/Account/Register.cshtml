@@ -1,0 +1,56 @@
+﻿@model RealMadridStore.Models.ViewModel.RegisterVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+    <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }   
+    </style>
+    <div class="card mb-3">
+        <div class="row g-0 d-flex align-items-center">
+            <div class="col-lg-4 d-none d-lg-flex">
+
+                <img src="~/images/Logo.png" alt="Real Madrid"
+                     class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+            </div>
+            <div class="col-lg-8">
+                <div class="card-body py-5 px-md-5">
+                    <form method="post" asp-controller="Account" asp-action="Register">
+                        <div asp-validation-summary="@ValidationSummary.ModelOnly"></div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form2Example1">User Name</label>
+                            <input asp-for="UserName" id="form2Example1" class="form-control" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label asp-for="Email" class="form-label" for="form2Example1"></label>
+                            <input asp-for="Email" type="email" id="form2Example1" class="form-control" />
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form2Example2">Password</label>
+                            <input asp-for="Password" type="password" id="form2Example2" class="form-control" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form2Example2"> Confirm Password</label>
+                            <input asp-for="ConfirmPassword" id="form2Example2" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+                        <a asp-action="Login" asp-controller="Account">Login</a>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: Design Block -->

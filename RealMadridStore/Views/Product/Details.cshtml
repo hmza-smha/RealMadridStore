@@ -1,0 +1,59 @@
+﻿@model RealMadridStore.Models.Product
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="@Model.Id" />
+    <div class="container backgroundWhite">
+        <div class="card">
+            <div class="card-header bg-light text-light ml-0 row container">
+                <div class="col-12 col-md-6">
+                    <h1 class="text-primary">@Model.Name</h1>                   
+                </div>               
+            </div>
+            <div class="card-body">
+                <div class="container rounded p-2">
+                    <div class="row">
+                        <div class="col-8 col-lg-8">
+
+                            <div class="row pl-2">
+                                <h5 class="text-muted pb-2">Price: <span>$ @Model.Price</span></h5>
+                                <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                            </div>                            
+                            <div class="row pl-2">
+                                <p class="text-secondary">@Model.Description</p>
+                                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                            </div>
+                            <div class="row pl-2">
+                                <div class="col-2 text-primary"><h4>Count</h4></div>
+                                <div class="col-10">
+                                    <input class="form-control" />
+                                    <span  class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 offset-lg-1 text-center">
+                            <img src="@Model.ImageUrl" width="100%" class="rounded" />
+                            <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 col-md-6 pb-1">
+                        <a asp-action="Index" class="btn btn-success form-control  btn-square btn-lg" style="height:50px;">Back to List</a>
+                    </div>
+                    <div class="col-12 col-md-6 pb-1">
+
+                        <button asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id" value="Add to Cart" class="btn btn-primary btn-square btn-lg form-control" style="height:50px;">Add to Cart</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

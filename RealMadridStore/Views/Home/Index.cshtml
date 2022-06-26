@@ -1,0 +1,67 @@
+﻿@model List<RealMadridStore.Models.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1 {
+        color: blueviolet;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .real-img {
+        width: 1000px;
+        display: block;
+        margin: 0 auto;
+        opacity: 0.8;
+        position: relative;
+        top: -50px;
+        border-bottom: 1px solid grey;
+    }
+
+    .flex-container {
+        margin: 50px 0;
+        display: flex;
+        justify-content: space-around;
+        background-color: #eee;
+        align-items: center;
+    }
+
+    .flex-container > div {
+        background-color: #f1f1f1;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
+
+    .categories {
+        text-decoration: none;
+        color: black;
+    }
+
+    .categories:hover {
+        padding: 10px 0;
+        text-decoration: none;
+        border-bottom: 1px solid blue;
+    }
+</style>
+
+<img class="real-img" src="~/images/real.jpg" />
+
+<h1> Categories </h1>
+
+<div class="flex-container" id="categories">
+
+    @foreach (var caregory in Model)
+    {
+        <div>
+            <a class="categories" asp-controller="Product" asp-action="Index" asp-route-id="@caregory.Id">@caregory.Name</a>
+        </div>
+
+    }
+</div>

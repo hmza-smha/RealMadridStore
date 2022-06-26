@@ -1,0 +1,59 @@
+﻿@model RealMadridStore.Models.ViewModel.ProductVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CreateProduct</h1>
+
+<h4>CreateProductVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateProduct" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>           
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" type="file" name="file" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            @if (@Model != null)
+            {
+                <img src="@Model.ImageUrl" width=200 />
+
+            }
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>                
+
+                @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.Categories, "Id", "Name"),
+                    "Select category", new { @class = "form-control" })
+
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AllProducts">Back to List</a>
+</div>
+
