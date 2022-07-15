@@ -2,6 +2,12 @@
 
 A website that allows customers to buy and sell ```Real-Madrid``` goods. Customers can select to display products in a single category. Customers can click on any product to get more information including pricing. Customers can select items and add them to their shopping cart
 
+## Live Demonstration
+
+The E-commerce demo can be viewed online [HERE](https://realmadridstore.azurewebsites.net/)
+
+<br>
+
 <b>Category Features</b>
 
 | Feature  |  Coded?       | Description  |
@@ -34,8 +40,7 @@ A website that allows customers to buy and sell ```Real-Madrid``` goods. Custome
 | Checkout | &#10004; | Ability to Checkout |
 | Email Send| &#10004; | An Email will be sent on a checkout |
 
-## Live Demonstration
-The E-commerce demo can be viewed online [HERE](https://realmadridstore.azurewebsites.net/)
+<br>
 
 Here are screenshots that show the E-commerce demo application in use.
 
