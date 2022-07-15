@@ -1,6 +1,6 @@
 # Real Madrid Store
 
-A website that allows customers to buy and sell Real-Madrid goods. Customers can select to display products in a single category. Customers can click on any product to get more information including pricing. Customers can select items and add them to their shopping cart
+A website that allows customers to buy and sell ```Real-Madrid``` goods. Customers can select to display products in a single category. Customers can click on any product to get more information including pricing. Customers can select items and add them to their shopping cart
 
 <b>Category Features</b>
 
@@ -60,7 +60,7 @@ To get started you can simply clone this ecommerce-demo repository and install t
 Clone the ecommerce-demo repository using git:
 
 ```bash
-git clone https://github.com/MutazTB/RealMadridStore.git
+git clone https://github.com/hmza-smha/RealMadridStore.git
 cd RealMadridStore
 ```
 
